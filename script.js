@@ -8,7 +8,7 @@ const secretAudio = document.getElementById('secretAudio');
 
 let audioPlayed = false;
 
-// Sliding Transitions (Matching Video)
+// Sliding Animations
 registerLink.addEventListener('click', (e) => {
     e.preventDefault();
     wrapper.classList.add('active');
@@ -19,7 +19,7 @@ loginLink.addEventListener('click', (e) => {
     wrapper.classList.remove('active');
 });
 
-// Admin Authentication (admin & 999)
+// Admin Authentication (Username: admin | Password: 999)
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const user = document.getElementById('loginUsername').value;
@@ -30,11 +30,11 @@ loginForm.addEventListener('submit', (e) => {
         dashboard.style.display = 'flex';
         startMatrix();
     } else {
-        alert('Invalid Credentials! (Username: admin | Password: 999)');
+        alert('Invalid Credentials! (Use Username: admin & Password: 999)');
     }
 });
 
-// Back Button Action
+// Back Button Event
 backBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     dashboard.style.display = 'none';
@@ -44,18 +44,18 @@ backBtn.addEventListener('click', (e) => {
     audioPlayed = false;
 });
 
-// Voice Trigger Action
+// Trigger Voice Audio on Tap
 dashboard.addEventListener('click', () => {
     if (!audioPlayed) {
         secretAudio.play().then(() => {
             audioPlayed = true;
         }).catch(err => {
-            console.log("Audio waiting for interaction:", err);
+            console.log("Audio waiting for user interaction:", err);
         });
     }
 });
 
-// Terminal Matrix Hacker Rain Effect
+// Matrix Rain Effect
 function startMatrix() {
     const canvas = document.getElementById('matrixCanvas');
     const ctx = canvas.getContext('2d');
