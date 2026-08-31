@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- মোবাইল জুম পুরোপুরি বন্ধ -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Animated Login & 3D Dashboard</title>
+  <title>Cyber Portal & Hacker Dashboard</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- ১. লগইন/সাইনআপ ইন্টারফেস -->
   <div class="wrapper" id="authWrapper">
     <span class="bg-animate"></span>
     <span class="bg-animate2"></span>
 
+    <!-- Login Form -->
     <div class="form-box login">
       <h2 class="animation" style="--i:0; --j:21;">Login</h2>
       <form id="loginForm">
@@ -36,6 +39,7 @@
       <p class="animation" style="--i:1; --j:21;">Enter your admin details to unlock exclusive portal features.</p>
     </div>
 
+    <!-- Sign Up Form -->
     <div class="form-box register">
       <h2 class="animation" style="--i:17; --j:0;">Sign Up</h2>
       <form action="#">
@@ -60,20 +64,29 @@
 
     <div class="info-text register">
       <h2 class="animation" style="--i:16; --j:0;">WELCOME BACK!</h2>
-      <p class="animation" style="--i:17; --j:1;">Create an account to join our RGB animated system interface.</p>
+      <p class="animation" style="--i:17; --j:1;">Create an account to join our cyber system interface.</p>
     </div>
   </div>
 
+  <!-- ২. হ্যাকার টার্মিনাল ড্যাশবোর্ড -->
   <div class="dashboard" id="dashboard">
+    <!-- ম্যাট্রিক্স ডিজিটাল রেইন ক্যানভাস -->
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- ব্যাক বাটন -->
+    <button class="back-btn" id="backBtn"><i class='bx bx-arrow-back'></i> Back to Login</button>
+
+    <!-- ৩ডি আরজিবি কার্ড -->
     <div class="card-3d">
-      <h2>WARNING: RESTRICTED ACCESS</h2>
-      <p>আপনি কি নিশ্চিত আপনি এই পেজের গোপন ফিচারগুলো আনলক করতে চান? স্ক্রিনের যেকোনো জায়গায় একবার স্পর্শ করলেই মূল সিস্টেম অ্যাক্টিভ হয়ে যাবে!</p>
-      <p class="sub-text">⚡ Tap anywhere on screen to trigger system voice ⚡</p>
+      <h2>⚠️ RESTRICTED ACCESS ⚠️</h2>
+      <p>আপনি কি নিশ্চিত আপনি এই পেজের গোপন ফিচারগুলো অ্যাক্টিভ করতে চান? স্ক্রিনের যেকোনো জায়গায় একবার স্পর্শ করলেই মূল ভয়েস মেসেজ চালু হয়ে যাবে!</p>
+      <div class="sub-text">⚡ Tap Anywhere To Trigger Voice Audio ⚡</div>
     </div>
   </div>
 
+  <!-- অডিও সেটআপ -->
   <audio id="secretAudio" src="admin_lala.mp3" loop></audio>
 
   <script src="script.js"></script>
 </body>
-</html>
+        </html>
