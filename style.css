@@ -14,18 +14,17 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #081b29;
+  background: #111;
   overflow: hidden;
 }
 
-/* Video Smooth Slide Animation Container */
+/* Base Wrapper Card */
 .wrapper {
   position: relative;
   width: 100%;
   max-width: 380px;
-  height: 520px;
-  background: transparent;
-  border: 2px solid #000;
+  height: 500px;
+  background: #fff;
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -39,6 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 .wrapper .form-box.login {
@@ -64,6 +64,7 @@ body {
   font-size: 22px;
   color: #000;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .wrapper.active .form-box.register h2 {
@@ -84,10 +85,10 @@ body {
   border: none;
   outline: none;
   border-bottom: 2px solid #000;
-  padding-right: 20px;
-  font-size: 13px;
+  padding-right: 25px;
+  font-size: 14px;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
   transition: .5s;
 }
 
@@ -102,19 +103,20 @@ body {
   left: 0;
   transform: translateY(-50%);
   font-size: 13px;
-  color: #000;
+  color: #333;
   pointer-events: none;
   transition: .5s;
 }
 
 .wrapper.active .input-box label {
-  color: #fff;
+  color: #ddd;
 }
 
 .input-box input:focus~label,
 .input-box input:not(:placeholder-shown)~label {
   top: -5px;
   font-size: 11px;
+  font-weight: 700;
 }
 
 .input-box i {
@@ -133,7 +135,7 @@ body {
 .btn {
   position: relative;
   width: 100%;
-  height: 38px;
+  height: 40px;
   background: #000;
   border: 2px solid #000;
   outline: none;
@@ -143,6 +145,7 @@ body {
   color: #fff;
   font-weight: 600;
   z-index: 1;
+  margin-top: 10px;
 }
 
 .wrapper.active .btn {
@@ -152,10 +155,10 @@ body {
 }
 
 .logreg-link {
-  font-size: 10px;
+  font-size: 11px;
   color: #000;
   text-align: center;
-  margin: 12px 0 5px;
+  margin-top: 15px;
 }
 
 .wrapper.active .logreg-link {
@@ -180,6 +183,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 .info-text.login {
@@ -203,11 +207,12 @@ body {
 }
 
 .info-text p {
-  font-size: 9px;
+  font-size: 10px;
   margin-top: 5px;
+  opacity: 0.9;
 }
 
-/* Perfect Diagonal Sliding Angle (Video Copy) */
+/* Background Diagonal Animation */
 .wrapper .bg-animate {
   position: absolute;
   top: -4px;
@@ -219,6 +224,7 @@ body {
   transform: rotate(10deg) skewY(40deg);
   transform-origin: bottom right;
   transition: transform 1.2s ease, right 1.2s ease;
+  z-index: 1;
 }
 
 .wrapper.active .bg-animate {
@@ -237,6 +243,7 @@ body {
   transform: rotate(0deg) skewY(0deg);
   transform-origin: bottom left;
   transition: transform 1.2s ease, left 1.2s ease;
+  z-index: 1;
 }
 
 .wrapper.active .bg-animate2 {
@@ -244,57 +251,7 @@ body {
   left: -20px;
 }
 
-/* Animations */
-.form-box .animation,
-.info-text .animation {
-  transform: translateX(0);
-  opacity: 1;
-  filter: blur(0);
-  transition: .7s ease;
-  transition-delay: calc(.1s * var(--i));
-}
-
-.wrapper.active .form-box.login .animation {
-  transform: translateX(-120%);
-  opacity: 0;
-  filter: blur(10px);
-  transition-delay: calc(.1s * var(--j));
-}
-
-.wrapper.active .form-box.register .animation {
-  transform: translateX(0);
-  opacity: 1;
-  filter: blur(0);
-  transition-delay: calc(.1s * var(--i));
-}
-
-.wrapper .form-box.register .animation {
-  transform: translateX(120%);
-  opacity: 0;
-  filter: blur(10px);
-}
-
-.wrapper.active .info-text.login .animation {
-  transform: translateX(120%);
-  opacity: 0;
-  filter: blur(10px);
-  transition-delay: calc(.1s * var(--j));
-}
-
-.wrapper.active .info-text.register .animation {
-  transform: translateX(0);
-  opacity: 1;
-  filter: blur(0);
-  transition-delay: calc(.1s * var(--i));
-}
-
-.wrapper .info-text.register .animation {
-  transform: translateX(-120%);
-  opacity: 0;
-  filter: blur(10px);
-}
-
-/* Dashboard UI Fix */
+/* Hacker Dashboard */
 .dashboard {
   display: none;
   position: fixed;
@@ -302,7 +259,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: #020617;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -323,79 +280,105 @@ body {
   top: 20px;
   left: 20px;
   z-index: 10;
-  background: rgba(0, 255, 0, 0.2);
+  background: rgba(0, 255, 0, 0.15);
   border: 1px solid #0f0;
   color: #0f0;
-  padding: 8px 15px;
+  padding: 8px 16px;
   border-radius: 20px;
   font-size: 13px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
-  backdrop-filter: blur(5px);
+  gap: 6px;
+  backdrop-filter: blur(8px);
 }
 
-/* Clear 3D Solid Background Card with Outer Rainbow Glow */
+/* Water / Glassmorphism 3D Card */
 .card-3d {
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: 340px;
-  padding: 30px 20px;
-  background: #0b0f19; /* গাঢ় ব্যাকগ্রাউন্ড যাতে লেখা ১০০% স্পষ্ট বোঝা যায় */
-  border-radius: 15px;
+  max-width: 350px;
+  padding: 25px 20px;
+  /* ওয়াটার গ্লাস ব্যাকগ্রাউন্ড (স্বচ্ছ) */
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 18px;
   color: #fff;
   text-align: center;
-  transform: perspective(1000px) rotateX(6deg) rotateY(-3deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+  transform: perspective(1000px) rotateX(6deg) rotateY(-2deg);
+  /* কার্ডের নিচে ও চারপাশে ৭ কালারের থ্রিডি লাইটিং গ্লো */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8),
+              0 0 25px rgba(0, 225, 255, 0.3),
+              0 0 45px rgba(255, 0, 200, 0.2);
 }
 
-/* Outer RGB Border Glow Only */
+/* কার্ডের নিচ ও সাইড দিয়ে ৭ কালারের অ্যানিমেটেড লাইটিং বর্ডার */
 .card-3d::before, .card-3d::after {
   content: '';
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: 18px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 20px;
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #00ff2b, #00e1ff, #7a00ff, #ff00c8);
   background-size: 400%;
   z-index: -1;
-  animation: rainbowBorder 8s linear infinite;
+  animation: rainbowLighting 6s linear infinite;
 }
 
+/* কার্ডের নিচের অংশের গভীর লাইটিং এফেক্ট */
 .card-3d::after {
-  filter: blur(12px);
-  opacity: 0.9;
+  filter: blur(20px);
+  opacity: 0.85;
 }
 
-@keyframes rainbowBorder {
+@keyframes rainbowLighting {
   0% { background-position: 0 0; }
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
 
-.card-3d h2 {
-  font-size: 18px;
-  color: #ff3366;
-  margin-bottom: 12px;
-  text-shadow: 0 0 10px rgba(255, 51, 102, 0.8);
+/* টেক্সট স্টাইলিং - স্পষ্ট পড়া যাওয়ার জন্য */
+.notice-title {
+  font-size: 17px;
+  color: #ffcc00;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
   font-weight: 700;
 }
 
-.card-3d p {
+.warning-highlight {
   font-size: 13px;
-  color: #ffffff;
-  line-height: 1.6;
-  font-weight: 500;
+  color: #ff3366;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.5);
 }
 
-.card-3d .sub-text {
-  margin-top: 15px;
-  font-size: 11px;
+.sub-notice {
+  font-size: 12px;
+  color: #e2e8f0;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.strict-notice {
+  font-size: 12px;
+  color: #ff4d4d;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.audio-trigger-hint {
+  margin-top: 18px;
+  font-size: 10px;
   color: #00e1ff;
   font-weight: 600;
-  text-shadow: 0 0 5px #00e1ff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px #00e1ff;
 }
