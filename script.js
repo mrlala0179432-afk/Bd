@@ -8,7 +8,7 @@ const secretAudio = document.getElementById('secretAudio');
 
 let audioPlayed = false;
 
-// Slide Transitions
+// Sliding Transitions (Matching Video)
 registerLink.addEventListener('click', (e) => {
     e.preventDefault();
     wrapper.classList.add('active');
@@ -19,7 +19,7 @@ loginLink.addEventListener('click', (e) => {
     wrapper.classList.remove('active');
 });
 
-// Hardcoded Admin Authentication
+// Admin Authentication (admin & 999)
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const user = document.getElementById('loginUsername').value;
@@ -28,15 +28,15 @@ loginForm.addEventListener('submit', (e) => {
     if (user === 'admin' && pass === '999') {
         wrapper.style.display = 'none';
         dashboard.style.display = 'flex';
-        startMatrix(); // হ্যাকার ক্যানভাস ব্যাকগ্রাউন্ড চালুকরণ
+        startMatrix();
     } else {
-        alert('Invalid Credentials! Use Username: admin & Password: 999');
+        alert('Invalid Credentials! (Username: admin | Password: 999)');
     }
 });
 
-// Back Button Event
+// Back Button Action
 backBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // যাতে অডিও ক্লিক ইভেন্ট না পায়
+    e.stopPropagation();
     dashboard.style.display = 'none';
     wrapper.style.display = 'block';
     secretAudio.pause();
@@ -44,7 +44,7 @@ backBtn.addEventListener('click', (e) => {
     audioPlayed = false;
 });
 
-// Voice Trigger on Tap
+// Voice Trigger Action
 dashboard.addEventListener('click', () => {
     if (!audioPlayed) {
         secretAudio.play().then(() => {
@@ -55,7 +55,7 @@ dashboard.addEventListener('click', () => {
     }
 });
 
-// Matrix Rain Animation Logic
+// Terminal Matrix Hacker Rain Effect
 function startMatrix() {
     const canvas = document.getElementById('matrixCanvas');
     const ctx = canvas.getContext('2d');
@@ -63,7 +63,7 @@ function startMatrix() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
+    const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
     const fontSize = 14;
     const columns = canvas.width / fontSize;
     const drops = Array.from({ length: columns }).fill(1);
@@ -72,7 +72,7 @@ function startMatrix() {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = '#0f0'; // সবুজ রঙের হ্যাকার টেক্সট
+        ctx.fillStyle = '#0f0';
         ctx.font = fontSize + 'px monospace';
 
         for (let i = 0; i < drops.length; i++) {
