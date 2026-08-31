@@ -18,12 +18,11 @@ body {
   overflow: hidden;
 }
 
-/* Auth Section UI */
+/* Auth Section */
 .wrapper {
   position: relative;
-  width: 90%;
-  max-width: 400px;
-  height: 520px;
+  width: 380px;
+  height: 500px;
   background: transparent;
   border: 2px solid #0ef;
   border-radius: 20px;
@@ -43,12 +42,12 @@ body {
 
 .wrapper .form-box.login {
   left: 0;
-  padding: 0 25px 0 20px;
+  padding: 0 20px 0 15px;
 }
 
 .wrapper .form-box.register {
   right: 0;
-  padding: 0 20px 0 25px;
+  padding: 0 15px 0 20px;
   pointer-events: none;
 }
 
@@ -61,7 +60,7 @@ body {
 }
 
 .form-box h2 {
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
   text-align: center;
 }
@@ -69,8 +68,8 @@ body {
 .input-box {
   position: relative;
   width: 100%;
-  height: 45px;
-  margin: 20px 0;
+  height: 40px;
+  margin: 18px 0;
 }
 
 .input-box input {
@@ -80,8 +79,8 @@ body {
   border: none;
   outline: none;
   border-bottom: 2px solid #fff;
-  padding-right: 23px;
-  font-size: 14px;
+  padding-right: 20px;
+  font-size: 13px;
   color: #fff;
   font-weight: 500;
   transition: .5s;
@@ -97,7 +96,7 @@ body {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   transition: .5s;
 }
@@ -110,34 +109,29 @@ body {
 .btn {
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 38px;
   background: #0ef;
   border: 2px solid #0ef;
   outline: none;
   border-radius: 40px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
   color: #081b29;
   font-weight: 600;
   z-index: 1;
-  overflow: hidden;
 }
 
 .logreg-link {
-  font-size: 11px;
+  font-size: 10px;
   color: #fff;
   text-align: center;
-  margin: 15px 0 10px;
+  margin: 12px 0 5px;
 }
 
 .logreg-link p a {
   color: #0ef;
   text-decoration: none;
   font-weight: 600;
-}
-
-.logreg-link p a:hover {
-  text-decoration: underline;
 }
 
 .info-text {
@@ -152,30 +146,30 @@ body {
 
 .info-text.login {
   right: 0;
-  padding: 0 20px 0 25px;
+  padding: 0 15px 0 20px;
   text-align: right;
 }
 
 .info-text.register {
   left: 0;
-  padding: 0 25px 0 20px;
+  padding: 0 20px 0 15px;
   text-align: left;
   pointer-events: none;
 }
 
 .info-text h2 {
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
-  line-height: 1.3;
-  text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .info-text p {
-  font-size: 11px;
+  font-size: 10px;
   color: #fff;
+  margin-top: 5px;
 }
 
-/* Dynamic Curved Sliding Background */
+/* Background Diagonal Animation Fix */
 .wrapper .bg-animate {
   position: absolute;
   top: -4px;
@@ -212,7 +206,7 @@ body {
   left: -20px;
 }
 
-/* Animations */
+/* Text Animations */
 .form-box .animation,
 .info-text .animation {
   transform: translateX(0);
@@ -262,7 +256,7 @@ body {
   filter: blur(10px);
 }
 
-/* Dashboard UI */
+/* Hacker Dashboard UI */
 .dashboard {
   display: none;
   position: fixed;
@@ -270,27 +264,63 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #030712;
+  background: #000;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  z-index: 100;
 }
 
-/* 7-Color Rainbow RGB Animated Border */
+#matrixCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background: rgba(0, 238, 255, 0.2);
+  border: 1px solid #0ef;
+  color: #0ef;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #0ef;
+  color: #000;
+}
+
+/* 3D RGB Card */
 .card-3d {
   position: relative;
+  z-index: 5;
   width: 100%;
-  max-width: 380px;
-  padding: 30px 20px;
-  background: rgba(15, 23, 42, 0.9);
-  border-radius: 20px;
+  max-width: 350px;
+  padding: 25px 20px;
+  background: #090d16; /* পড়া সহজ করার জন্য কালো ডার্ক ব্যাকগ্রাউন্ড */
+  border-radius: 15px;
   color: #fff;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  transform: perspective(1000px) rotateX(10deg) rotateY(-5deg);
-  transition: transform 0.5s ease;
+  transform: perspective(1000px) rotateX(8deg) rotateY(-4deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
 }
 
+/* Outer 7-Color Rainbow RGB Animation Border */
 .card-3d::before, .card-3d::after {
   content: '';
   position: absolute;
@@ -298,35 +328,36 @@ body {
   left: -3px;
   right: -3px;
   bottom: -3px;
-  border-radius: 22px;
+  border-radius: 18px;
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #00ff2b, #00e1ff, #7a00ff, #ff00c8);
   background-size: 400%;
   z-index: -1;
-  animation: rainbow 12s linear infinite;
+  animation: rainbowBorder 8s linear infinite;
 }
 
 .card-3d::after {
-  filter: blur(20px);
+  filter: blur(15px);
   opacity: 0.8;
 }
 
-@keyframes rainbow {
+@keyframes rainbowBorder {
   0% { background-position: 0 0; }
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
 
 .card-3d h2 {
-  font-size: 20px;
+  font-size: 18px;
   color: #ff3366;
-  margin-bottom: 15px;
-  text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+  margin-bottom: 12px;
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.6);
 }
 
 .card-3d p {
   font-size: 13px;
-  color: #cbd5e1;
-  line-height: 1.6;
+  color: #e2e8f0;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 .card-3d .sub-text {
@@ -334,4 +365,5 @@ body {
   font-size: 11px;
   color: #0ef;
   font-weight: 600;
-}
+  text-shadow: 0 0 5px #0ef;
+  }
